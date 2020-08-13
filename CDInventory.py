@@ -54,13 +54,15 @@ while True:
         print('ID, CD Title, Artist')
         for row in lstTbl:
             print('{}  |  {}  |  {}'.format(row['id'], row['artist'], row['title']))
-    elif strChoice == 'd':
+       elif strChoice == 'd':
         idSearch = input("Enter the ID of the CD you would like to delete: ")
         idIntSearch = int(idSearch)
         for counter in range(len(lstTbl)):
             if lstTbl[counter]['id'] == idIntSearch:
-                print('remove')
                 lstTbl.pop(counter)
+                print()
+                print('removed')
+                print()
     elif strChoice == 's':
         # 4. Save the data to a text file CDInventory.txt if the user chooses so
         with open(strFileName,'w'): pass
